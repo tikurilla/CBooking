@@ -13,7 +13,7 @@
        <p>Выберите места в зале ${auditorium.auditoriumName}:</p>
        <#list auditorium.occupiedSeatsMap as seatNumber, seatStatus>
             <#if seatStatus == "checked">
-                <input type="checkbox" name="seats" value=${seatNumber} checked>${seatNumber}<Br>
+                <input type="checkbox" name="seats" value=${seatNumber} checked disabled>${seatNumber}<Br>
             <#else>
                 <input type="checkbox" name="seats" value=${seatNumber}>${seatNumber}<Br>
             </#if>

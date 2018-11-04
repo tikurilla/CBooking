@@ -94,10 +94,9 @@ public class MovieTheatersDAO {
         List<Document> auditoriumsWithSpecIDs = auditoriumsCollection.find(requiredAuditoriumDocumentFilter).into(new ArrayList<Document>());
         List<String> auditoriumNamesList = new ArrayList<>();
         Map<String, String> auditoriumNamesMap = new HashMap<>();
-        int i = 0;
         for(Document document : auditoriumsWithSpecIDs) {
-            auditoriumNamesMap.put(auditoriumIDs.get(i), document.getString("auditorium_name"));
-            i++;
+            auditoriumNamesMap.put(document.getString("_id"),
+                                   document.getString("auditorium_name"));
         }
         return new MovieTheater(movieTheaterID,
                         movieTheaterName,

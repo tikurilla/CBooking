@@ -43,10 +43,6 @@ public class Main {
             String movieTheaterID = request.params(":auditoriumID");
             Auditorium auditorium = auditoriumDAO.getAuditorium(movieTheaterID);
             auditorium.makeMapFromSet();
-//            for (Map.Entry<Integer, String> entry : auditorium.getOccupiedSeatsMap().entrySet())
-//            {
-//                System.out.println(entry.getKey() + "/" + entry.getValue());
-//            }
             HashMap<String, Object> attributes = new HashMap<>();
             attributes.put("auditorium", auditorium);
             return new ModelAndView(attributes, "auditorium.ftl");

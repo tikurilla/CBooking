@@ -54,3 +54,8 @@ header::after {
     display: inline-block;
     width: 100%;
 }
+
+input[type=checkbox][disabled]{
+  outline:2px solid #0569b6;
+  color : #0569b6;
+}
