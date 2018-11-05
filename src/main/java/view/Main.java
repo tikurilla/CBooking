@@ -54,7 +54,7 @@ public class Main {
             String auditoriumID = request.params(":auditoriumID");
             Set<Integer> occupiedSeats = Auditorium.makeSeatsSetFromQerry(request.body());
             auditoriumDAO.bookAuditoriumSeats(occupiedSeats, auditoriumID);
-            attributes.put("message", "Checked out!");
+            attributes.put("message", "Места зарезервированы!");
             return new ModelAndView(attributes, "checkout.ftl");
         }, new FreeMarkerTemplateEngine());
     }
