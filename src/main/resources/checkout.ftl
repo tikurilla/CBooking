@@ -5,8 +5,8 @@
   <title>Welcome!</title>
 </head>
 <header>
-    <h1>Список кинотеатров</h1>
-    <nav><a href="/theaters">К списку кинотеатров</a></nav>
+    <h1>Theaters list</h1>
+    <nav><a href="/theaters">To theaters list</a></nav>
 </header>
 <body>
     <p>${message}</p>
