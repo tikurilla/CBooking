@@ -53,6 +53,8 @@ public class Main {
             HashMap<String, Object> attributes = new HashMap<>();
             String auditoriumID = request.params(":auditoriumID");
             Set<Integer> occupiedSeats = Auditorium.makeSeatsSetFromQerry(request.body());
+            System.out.println("Body:" + request.body());
+                occupiedSeats.forEach(System.out::println);
             auditoriumDAO.bookAuditoriumSeats(occupiedSeats, auditoriumID);
             attributes.put("message", "Seats reserved!");
             return new ModelAndView(attributes, "checkout.ftl");

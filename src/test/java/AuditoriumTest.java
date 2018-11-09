@@ -67,4 +67,27 @@ public class AuditoriumTest {
         assertEquals(testMap, redHall.getOccupiedSeatsMap());
     }
 
+    @Test
+    public void testMakeSeatsSetFromQerry() {
+        String body1 = "seats=10&seats=13&seats=17";
+        Set<Integer> set1 = new HashSet<>();
+        set1.add(10);set1.add(13);set1.add(17);
+        String body2 = "seats=1&seats=9";
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(1);set2.add(9);
+        String body3 = "seats=9";
+        Set<Integer> set3 = new HashSet<>();
+        set3.add(9);
+        String body4 = "seats=21&seats=49";
+        Set<Integer> set4 = new HashSet<>();
+        set4.add(21);set4.add(49);
+        String body5 = "";
+        Set<Integer> set5 = new HashSet<>();
+        assertEquals(set1, Auditorium.makeSeatsSetFromQerry(body1));
+        assertEquals(set2, Auditorium.makeSeatsSetFromQerry(body2));
+        assertEquals(set3, Auditorium.makeSeatsSetFromQerry(body3));
+        assertEquals(set4, Auditorium.makeSeatsSetFromQerry(body4));
+        assertEquals(set5, Auditorium.makeSeatsSetFromQerry(body5));
+    }
+
 }

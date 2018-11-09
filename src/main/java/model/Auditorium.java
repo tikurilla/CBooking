@@ -94,9 +94,9 @@ public class Auditorium {
         String[] queryArray = querry.split("seats=");
         Set<Integer> seatsSet = new HashSet<>();
         for (String item: queryArray) {
-            if (item.length() > 1 & item.contains("&"))
+            if (item.length() > 0 & item.contains("&"))
                 seatsSet.add(Integer.parseInt(item.substring(0, item.length() - 1)));
-            else if (item.length() > 1)
+            else if (item.length() > 0)
                 seatsSet.add(Integer.parseInt(item));
         }
         return seatsSet;
